@@ -1,0 +1,30 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "hieu_ncc",
+  "password": "123456"
+}
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "hieu_ncc",
+  "password": "123456"
+}
+
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQxNjlkYzQ1NGM1NGNlM2ZlNTZiYTMiLCJpYXQiOjE2NDEyMDQwODV9.YdlT8fcPF-ciXppLf2bcGcsh0X8E-Y_IzK3Mm1BfQ-0
+
+{
+  "title": "my adasd todo",
+  "description": "add new todo with node js",
+  "level": "MEDIUM"
+}
+
+###
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MWQxNjlkYzQ1NGM1NGNlM2ZlNTZiYTMiLCJpYXQiOjE2NDEyMDQwODV9.YdlT8fcPF-ciXppLf2bcGcsh0X8E-Y_IzK3Mm1BfQ-0
