@@ -27,22 +27,14 @@ const GET_TODOS = async () => {
     return error.response.data.message
   }
 }
-// const GET_TODOS = () => {
-//   return new Promise((resolve,reject)=>{
-//     baseAPI.get(`/api/posts`)
-//       .then(res => {
-//         resolve(res.data.posts)
-//       })
-//       .catch(reject)
-//   })
-// }
-const useReducerFetch = ({ params, query, middleware }) => {
+const useReducerFetch = () => {
   const [ result, dispatch ] = useReducer(listAction, [])
-
+  
   useEffect(() => {
     dispatch({type: 'GET_TODOS'})
+    GET_TODOS()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[ params, query ])
+  },[])
   return { result, dispatch }
 }
 export default useReducerFetch

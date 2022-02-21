@@ -1,7 +1,6 @@
 import baseAPI from "../../config/baseAPI";
 
-export default async function putTodo(id, result) {
-    const index = result.findIndex((item) => item._id === id);
+export default async function putTodo(index, result) {
     delete result[index].isEdit
     try {
       const response = await baseAPI.put(`/api/posts/${id}`, result[index])
